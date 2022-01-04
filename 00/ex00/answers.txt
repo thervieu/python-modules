@@ -1,0 +1,4 @@
+1 and 2: pip list
+3: pip show numpy
+4: pip search tesseract (now disabled because there were too many requests)
+5: pip freeze > requirements.txt
