@@ -1,8 +1,10 @@
 
-recipes = {'sandwich': ('ham', 'bread', 'cheese', 'tomatoes', 'lunch', '10'),
+recipes = {
+        'sandwich': ('ham', 'bread', 'cheese', 'tomatoes', 'lunch', '10'),
         'cake': ('flour', 'sugar', 'eggs', 'dessert', '60'),
         'salad': ('avocado', 'arugula', 'tomatoes', 'spinach', 'lunch', '15')
     }
+
 
 def addRecipe():
     print("Please enter the NEW recipe's name:")
@@ -40,7 +42,7 @@ def addRecipe():
             input_ = input()
             try:
                 mytime = int(input_)
-            except:
+            except input_.isnum() is False:
                 print("please input an int\n")
                 continue
             if mytime <= 0:
@@ -50,7 +52,7 @@ def addRecipe():
             print(recipe)
             break
     return
-        
+
 
 def delRecipe():
     print("Please enter the recipe's name you want to delete:")
@@ -60,6 +62,7 @@ def delRecipe():
         del recipes[input_]
     else:
         print("Recipe already does not exist\n")
+
 
 def printRecipe():
     print("Please enter the recipe's name to get its details:")
@@ -74,22 +77,29 @@ def printRecipe():
     else:
         print("Recipe does not exist\n")
 
+
 def printCookBook():
     print("Here are all the recipes:")
     for recipe in recipes.items():
         print("{}".format(recipe[0]))
     print("")
 
+
 if __name__ == "__main__":
-    
     while True:
-        print("Please select an option by typing the corresponding number:\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit")
+        print("{}{}{}".format(
+            "Please select an option by typing the corresponding number:\n",
+            "1: Add a recipe\n2: Delete a recipe\n",
+            "3: Print a recipe\n4: Print the cookbook\n5: Quit"
+        ))
         print(">> ", end='')
         input_w = input()
         try:
             nb = int(input_w)
-        except:
-            print("This option does not exist, please type the corresponding number.\nTo exit, enter 5.")
+        except input_.isnum() is False:
+            print("This option does not exist, {}".format(
+                "please type the corresponding number.\nTo exit, enter 5."
+            ))
             continue
         if nb == 1:
             addRecipe()
@@ -102,5 +112,7 @@ if __name__ == "__main__":
         elif nb == 5:
             break
         else:
-            print("This option does not exist, please type the corresponding number.\nTo exit, enter 5.")
+            print("This option does not exist, {}".format(
+                "please type the corresponding number.\nTo exit, enter 5."
+            ))
     print("Goodbye!")

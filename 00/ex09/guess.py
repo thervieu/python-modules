@@ -11,7 +11,7 @@ if __name__ == "__main__":
         guess_count += 1
         try:
             num = int(input_)
-        except:
+        except input_.isnum() is False:
             if input_ == 'exit':
                 print('Goodbye!')
                 sys.exit()

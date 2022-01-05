@@ -3,16 +3,28 @@ import time
 
 start_time = time.time()
 
+
 def ft_progress(aList):
     count = len(aList)
+
     def show(j):
         x = int(20 * j / count)
-        print("ETA: {:.2f}s [{:3d}%][{}>{}] {}/{} | elapsed time {:.2f}".format((count - j)/j*(time.time() - start_time), int(j / count * 100), '='*x, ' '*(20 - x), j, count, (time.time() - start_time)), end='\r')
+        print("ETA: {:.2f}s [{:3d}%][{}>{}] {}/{} | {} {:.2f}".format(
+            (count - j)/j*(time.time() - start_time),
+            int(j / count * 100),
+            '='*x, ' '*(20 - x),
+            j,
+            count,
+            (time.time() - start_time)),
+            "elapsed time",
+            end='\r')
+
     show(1)
     for i, item in enumerate(aList):
         yield item
         show(i+1)
     print()
+
 
 if __name__ == "__main__":
     print("example 1:")

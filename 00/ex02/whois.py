@@ -6,7 +6,7 @@ if __name__ == '__main__':
         sys.exit()
     try:
         argvint = int(sys.argv[1])
-    except:
+    except sys.argv[1].isnum() is False:
         print("ERROR")
         sys.exit()
     if argvint % 2 == 0:

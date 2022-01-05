@@ -1,11 +1,13 @@
 import sys
 from string import punctuation
 
+
 def text_analyzer(*args):
-    """Counts the number of upper, lower, punctuation and spaces in the given text"""
+    """Counts the number of upper, lower, punctuation and spaces
+in the given text"""
     if len(args) > 1:
         print("ERROR")
-        sys.exit()
+        return
     elif len(args) == 1:
         text = args[0]
     else:
