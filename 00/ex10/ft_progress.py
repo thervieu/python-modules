@@ -44,6 +44,3 @@ if __name__ == "__main__":
         time.sleep(0.005)
     print()
     print(ret)
-
-# 0 - j     -> 3s
-# j - count -> t
