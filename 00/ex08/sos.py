@@ -23,8 +23,6 @@ if __name__ == "__main__":
     if all(c.isalnum() or c.isspace() for c in sentence) is False:
         print('ERROR: sentence not stricly alphanum', end='')
         sys.exit()
-    print(sentence)
     sentence = ' '.join(sentence.upper().split())
-    print(sentence)
     for c in sentence:
         print("{} ".format(MORSE_CODE_DICT[c]), end='')

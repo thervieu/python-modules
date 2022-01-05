@@ -10,13 +10,13 @@ def ft_progress(aList):
     def show(j):
         x = int(20 * j / count)
         print("ETA: {:.2f}s [{:3d}%][{}>{}] {}/{} | {} {:.2f}".format(
-            (count - j)/j*(time.time() - start_time),
+            ((count - j)*(time.time() - start_time)/j),
             int(j / count * 100),
             '='*x, ' '*(20 - x),
             j,
             count,
-            (time.time() - start_time)),
             "elapsed time",
+            (time.time() - start_time)),
             end='\r')
 
     show(1)
@@ -35,6 +35,7 @@ if __name__ == "__main__":
         time.sleep(0.01)
     print()
     print(ret)
+    start_time = time.time()
     print("\nexample 2:")
     listy = range(3333)
     ret = 0
@@ -43,3 +44,6 @@ if __name__ == "__main__":
         time.sleep(0.005)
     print()
     print(ret)
+
+# 0 - j     -> 3s
+# j - count -> t

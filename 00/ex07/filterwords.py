@@ -3,9 +3,10 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage:\n\tpython3 filterwords.py <str_to_filter> <min_length>")
-    try:
+        sys.exit()
+    if sys.argv[2].isnumeric() is True:
         min_len = int(sys.argv[2])
-    except sys.argv[2].isnum() is False:
+    else:
         print("Input_error: 2nd arg must be a number")
         print("Usage:\n\tpython3 filterwords.py <str_to_filter> <min_length>")
         sys.exit()
