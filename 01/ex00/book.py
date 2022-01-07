@@ -1,6 +1,7 @@
 from recipe import Recipe
 from datetime import datetime
 
+
 class Book:
 
     def __init__(self, name):
@@ -35,7 +36,9 @@ class Book:
     def get_recipes_by_types(self, recipe_type):
         """Get all recipe names for a given recipe_type """
         if (isinstance(recipe_type, str) is False):
-            raise TypeError("Book: get_recipes_by_types: recipe_type must be a string")
+            raise TypeError("Book: get_recipes_by_types: {}".format(
+                "recipe_type must be a string"
+            ))
         if (recipe_type != 'starter' and recipe_type != 'lunch'
                 and recipe_type != 'dessert'):
             raise ValueError("Book: get_recipes_by_types: {}{}".format(
