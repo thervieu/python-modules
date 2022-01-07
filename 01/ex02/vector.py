@@ -3,7 +3,7 @@ class Vector(object):
         """ Create a vector, example: v = Vector(1,2) """
         self.values = []
         if len(args) == 0:
-            self.values = (0,0)
+            raise ValueError("Vector: can't initialize with no argument")
         elif len(args) == 1 and isinstance(args[0], int):
             for i in range(args[0]):
                 self.values.append(i)
@@ -23,7 +23,7 @@ class Vector(object):
 
         if isinstance(self.values[0], float):
             for a in self.values:
-                transpose.append([a,])
+                transpose.append([a, ])
         else:
             for a in self.values:
                 transpose.append(a[0])
@@ -158,7 +158,7 @@ class Vector(object):
         if isinstance(self, Vector):
             raise TypeError("Vector: div: type {} not supported".format(
                 type(self)))
-            
+
         return self.__truediv__(other)
 
     def __iter__(self):
